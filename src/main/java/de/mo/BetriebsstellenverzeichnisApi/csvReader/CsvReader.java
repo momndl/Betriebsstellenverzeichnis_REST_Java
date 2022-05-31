@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class CsvReader {
 
     // Path to csv file
-    String path = "src/main/java/de/mo/BetriebsstellenverzeichnisApi/CsvReader/BSV_2021_10.csv";
+    String path = "src/main/resources/assets/BSV_2021_10.csv";
     ArrayList<Betriebsstelle> betriebsstellenverzeichnis = new ArrayList<>();
     Betriebsstelle betriebsstelleToReturn = new Betriebsstelle();
     String line = "";
@@ -25,10 +25,12 @@ public class CsvReader {
 
             while((line = br.readLine())!= null ) {
                 String[] values = line.split(";");
-                Betriebsstelle bahnstelle = new Betriebsstelle(
+
+                Betriebsstelle betriebsstelle = new Betriebsstelle(
                         values[0], values[1], values[2], values[3], values[4], values[5], values[6],
                         values[7], values[8], values[9], values[10], values[11]);
-                betriebsstellenverzeichnis.add(bahnstelle);
+
+                betriebsstellenverzeichnis.add(betriebsstelle);
             }
 
             for (Betriebsstelle betriebsstelle : betriebsstellenverzeichnis) {
@@ -45,6 +47,4 @@ public class CsvReader {
         }
          return betriebsstelleToReturn;
     }
-
-
 }

@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class BsvController {
 
     @RequestMapping("/betriebsstelle")
-    public String greetinag(){
+    public String betriebsstelle(){
+
         return  " <div> " +
                     " <h1> to get a valid JSON response, please add the RL-100 code after /betriebsstelle </h1> " +
                     " <h2> example: betriebsstelle/XABC </h2> " +
