@@ -1,18 +1,18 @@
-package de.mo.BahnstellenverzeichnisApi.bahnstelle;
+package de.mo.BetriebsstellenverzeichnisApi.betriebsstelle;
 
 public class Betriebsstelle {
     private String plc;
     private String rl100Code;
-    private String rl100Long;
-    private String rl100Short;
-    private String typeShort;
-    private String typeLong;
-    private String operatingCondition;
-    private String dateFrom;
-    private String dateTo;
-    private String branch;
-    private String region;
-    private String lastChange;
+    private String rl100Langname;
+    private String rl100Kurzname;
+    private String typKurz;
+    private String typLang;
+    private String betriebszustand;
+    private String datumAb;
+    private String datumBis;
+    private String niederlassung;
+    private String regionalbereich;
+    private String letzteAenderung;
 
 
 
@@ -20,22 +20,20 @@ public class Betriebsstelle {
         super();
     }
 
-    public Betriebsstelle(String plc, String rl100Code, String rl100Long, String rl100Short, String typeShort, String typeLong, String operatingCondition, String dateFrom, String dateTo, String branch, String region, String lastChange) {
+    public Betriebsstelle(String plc, String rl100Code, String rl100Langname, String rl100Kurzname, String typKurz, String typLang, String betriebszustand, String datumAb, String datumBis, String niederlassung, String regionalbereich, String letzteAenderung) {
         this.plc = plc;
         this.rl100Code = rl100Code;
-        this.rl100Long = rl100Long;
-        this.rl100Short = rl100Short;
-        this.typeShort = typeShort;
-        this.typeLong = typeLong;
-        this.operatingCondition = operatingCondition;
-        this.dateFrom = dateFrom;
-        this.dateTo = dateTo;
-        this.branch = branch;
-        this.region = region;
-        this.lastChange = lastChange;
+        this.rl100Langname = rl100Langname;
+        this.rl100Kurzname = rl100Kurzname;
+        this.typKurz = typKurz;
+        this.typLang = typLang;
+        this.betriebszustand = betriebszustand;
+        this.datumAb = datumAb;
+        this.datumBis = datumBis;
+        this.niederlassung = niederlassung;
+        this.regionalbereich = regionalbereich;
+        this.letzteAenderung = letzteAenderung;
     }
-
-
 
     public String getPlc() {
         return plc;
@@ -45,44 +43,44 @@ public class Betriebsstelle {
         return rl100Code;
     }
 
-    public String getRl100Long() {
-        return rl100Long;
+    public String getRl100Langname() {
+        return rl100Langname;
     }
 
-    public String getRl100Short() {
-        return rl100Short;
+    public String getRl100Kurzname() {
+        return rl100Kurzname;
     }
 
-    public String getTypeShort() {
-        return typeShort;
+    public String getTypKurz() {
+        return typKurz;
     }
 
-    public String getTypeLong() {
-        return typeLong;
+    public String getTypLang() {
+        return typLang;
     }
 
-    public String getOperatingCondition() {
-        return operatingCondition;
+    public String getBetriebszustand() {
+        return betriebszustand;
     }
 
-    public String getDateFrom() {
-        return dateFrom;
+    public String getDatumAb() {
+        return datumAb;
     }
 
-    public String getDateTo() {
-        return dateTo;
+    public String getDatumBis() {
+        return datumBis;
     }
 
-    public String getBranch() {
-        return branch;
+    public String getNiederlassung() {
+        return niederlassung;
     }
 
-    public String getRegion() {
-        return region;
+    public String getRegionalbereich() {
+        return regionalbereich;
     }
 
-    public String getLastChange() {
-        return lastChange;
+    public String getLetzteAenderung() {
+        return letzteAenderung;
     }
 
 
@@ -92,16 +90,16 @@ public class Betriebsstelle {
         return "{" +
                 "plc='" + plc + '\'' +
                 ", rl100Code='" + rl100Code + '\'' +
-                ", rl100Long='" + rl100Long + '\'' +
-                ", rl100Short='" + rl100Short + '\'' +
-                ", typeShort='" + typeShort + '\'' +
-                ", typeLong='" + typeLong + '\'' +
-                ", operatingCondition='" + operatingCondition + '\'' +
-                ", dateFrom='" + dateFrom + '\'' +
-                ", dateTo='" + dateTo + '\'' +
-                ", branch='" + branch + '\'' +
-                ", region='" + region + '\'' +
-                ", lastChange='" + lastChange + '\'' +
+                ", rl100Langname='" + rl100Langname + '\'' +
+                ", rl100Kurzname='" + rl100Kurzname + '\'' +
+                ", typKurz='" + typKurz + '\'' +
+                ", typLang='" + typLang + '\'' +
+                ", betriebszustand='" + betriebszustand + '\'' +
+                ", datumAb='" + datumAb + '\'' +
+                ", datumBis='" + datumBis + '\'' +
+                ", niederlassung='" + niederlassung + '\'' +
+                ", regionalbereich='" + regionalbereich + '\'' +
+                ", letzteÄnderung='" + letzteAenderung + '\'' +
                 '}';
     }
 }

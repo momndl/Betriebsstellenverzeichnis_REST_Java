@@ -1,4 +1,4 @@
-package de.mo.BahnstellenverzeichnisApi.controller;
+package de.mo.BetriebsstellenverzeichnisApi.controller;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;

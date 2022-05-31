@@ -1,7 +1,8 @@
-package de.mo.BahnstellenverzeichnisApi.controller;
+package de.mo.BetriebsstellenverzeichnisApi.controller;
 
-import de.mo.BahnstellenverzeichnisApi.CsvReader.CsvReader;
-import de.mo.BahnstellenverzeichnisApi.bahnstelle.Betriebsstelle;
+import de.mo.BetriebsstellenverzeichnisApi.betriebsstelle.Betriebsstelle;
+import de.mo.BetriebsstellenverzeichnisApi.csvReader.CsvReader;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
