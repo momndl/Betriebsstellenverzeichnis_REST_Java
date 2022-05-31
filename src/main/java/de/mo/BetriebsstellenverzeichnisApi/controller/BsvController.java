@@ -1,7 +1,7 @@
 package de.mo.BetriebsstellenverzeichnisApi.controller;
 
 import de.mo.BetriebsstellenverzeichnisApi.betriebsstelle.Betriebsstelle;
-import de.mo.BetriebsstellenverzeichnisApi.csvReader.CsvReader;
+import de.mo.BetriebsstellenverzeichnisApi.csvHandler.CsvHandler;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BsvController {
+
+
 
     @RequestMapping("/betriebsstelle")
     public String betriebsstelle(){
@@ -21,10 +23,10 @@ public class BsvController {
     }
 
     @RequestMapping("/betriebsstelle/{RL100}")
-    public Betriebsstelle returnBetriebsstelle(@PathVariable("RL100") String rl100) {
-        CsvReader reader = new CsvReader();
-
-        return reader.searchForEntry(rl100);
+    public Betriebsstelle returnBetriebsstelle(@PathVariable("RL100") String rl100Code) {
+        CsvHandler csvHandler = new CsvHandler();
+        csvHandler.readCsv("src/main/resources/assets/BSV_2021_10.csv");
+        return csvHandler.searchForBetriebsstelle(rl100Code);
     }
 
     @RequestMapping("*")

@@ -35,6 +35,8 @@ public class Betriebsstelle {
         this.letzteAenderung = letzteAenderung;
     }
 
+    // we do not need most of the getters now, keeping them for possible queries in future
+
     public String getPlc() {
         return plc;
     }
@@ -85,21 +87,5 @@ public class Betriebsstelle {
 
 
 
-    @Override
-    public String toString() {
-        return "{" +
-                "plc='" + plc + '\'' +
-                ", rl100Code='" + rl100Code + '\'' +
-                ", rl100Langname='" + rl100Langname + '\'' +
-                ", rl100Kurzname='" + rl100Kurzname + '\'' +
-                ", typKurz='" + typKurz + '\'' +
-                ", typLang='" + typLang + '\'' +
-                ", betriebszustand='" + betriebszustand + '\'' +
-                ", datumAb='" + datumAb + '\'' +
-                ", datumBis='" + datumBis + '\'' +
-                ", niederlassung='" + niederlassung + '\'' +
-                ", regionalbereich='" + regionalbereich + '\'' +
-                ", letzteÄnderung='" + letzteAenderung + '\'' +
-                '}';
-    }
+
 }
