@@ -27,17 +27,19 @@ public class BsvController {
     }
 
     @RequestMapping("/betriebsstelle/{RL100}")
-    public Betriebsstelle returnBetriebsstelle(@PathVariable("RL100") String rl100Code) throws IOException {
+    public String returnBetriebsstelle(@PathVariable("RL100") String rl100Code) throws IOException {
         CsvHandler csvHandler = new CsvHandler();
+
+        // change pathToFile here if you want to load another file
         csvHandler.readCsv("src/main/resources/assets/BSV_2021_10.csv");
+
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
-        String jsonString = mapper.writeValueAsString(csvHandler.searchForBetriebsstelle(rl100Code));
-        System.out.println("hello");
-        System.out.println(jsonString);
-        return csvHandler.searchForBetriebsstelle(rl100Code);
+        String BetriebsstelleAsJsonString = mapper.writeValueAsString(csvHandler.searchForBetriebsstelle(rl100Code));
+
+        return BetriebsstelleAsJsonString;
     }
 
     @RequestMapping("*")
@@ -48,18 +50,6 @@ public class BsvController {
                 " </div>";
     }
 
-    @RequestMapping("/betriebsstellem/{RL100}")
-    public String returnBetriebsstellem(@PathVariable("RL100") String rl100Code) throws IOException {
-        CsvHandler csvHandler = new CsvHandler();
-        csvHandler.readCsv("src/main/resources/assets/BSV_2021_10.csv");
-        ObjectMapper mapper = new ObjectMapper();
 
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-
-        String jsonString = mapper.writeValueAsString(csvHandler.searchForBetriebsstelle(rl100Code));
-        System.out.println("hello");
-        System.out.println(jsonString);
-        return jsonString;
-    }
 
 }
