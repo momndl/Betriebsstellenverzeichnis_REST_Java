@@ -6,7 +6,8 @@ as a JSON response.
 
 Use a get request with /betriebsstelle/RL-100numberYouWantToGetInformation <br>
 e.G. /betriebsstelle/XBHS <br> <br>
+if the values of the returned are NULL, there is no matching RL100-Code.
 
-To change a file, simply edit the filepath at csvHandler.readCsv()method in BsvController class.
+To change a file, edit the filepath at csvHandler.readCsv()method in BsvController class.
 
 

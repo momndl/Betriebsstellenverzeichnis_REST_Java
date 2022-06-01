@@ -1,6 +1,9 @@
 package de.mo.BetriebsstellenverzeichnisApi.csvHandler;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import de.mo.BetriebsstellenverzeichnisApi.betriebsstelle.Betriebsstelle;
 
 import java.io.BufferedReader;
@@ -10,12 +13,12 @@ import java.util.ArrayList;
 
 public class CsvHandler {
 
-    ArrayList<Betriebsstelle> betriebsstellenverzeichnis = new ArrayList<>();
+     ArrayList<Betriebsstelle> betriebsstellenverzeichnis = new ArrayList<>();
     // initialize an empty Betriebsstelle to return, if we got no match at searchForBetriebsstelle method
-    Betriebsstelle noMatchingBetriebsstelle = new Betriebsstelle();
-    String line = "";
+     Betriebsstelle noMatchingBetriebsstelle = new Betriebsstelle();
+     String line = "";
     // seperator used in the readCsv method
-    String seperator = ";";
+     String seperator = ";";
 
     public void readCsv(String pathToFile) {
         try  {
@@ -31,6 +34,7 @@ public class CsvHandler {
                 betriebsstellenverzeichnis.add(betriebsstelle);
             }
 
+
         } catch (
                 IOException e) {
             e.printStackTrace();
@@ -38,7 +42,7 @@ public class CsvHandler {
 
     }
 
-    public Betriebsstelle searchForBetriebsstelle(String rl100Code){
+    public Betriebsstelle searchForBetriebsstelle(String rl100Code) {
 
         for (Betriebsstelle betriebsstelle : betriebsstellenverzeichnis) {
 

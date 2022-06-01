@@ -16,9 +16,7 @@ public class Betriebsstelle {
 
 
 
-    public Betriebsstelle(){
-        super();
-    }
+    public Betriebsstelle(){}
 
     public Betriebsstelle(String plc, String rl100Code, String rl100Langname, String rl100Kurzname, String typKurz, String typLang, String betriebszustand, String datumAb, String datumBis, String niederlassung, String regionalbereich, String letzteAenderung) {
         this.plc = plc;
@@ -34,8 +32,6 @@ public class Betriebsstelle {
         this.regionalbereich = regionalbereich;
         this.letzteAenderung = letzteAenderung;
     }
-
-    // we do not need most of the getters now, keeping them for possible queries in future
 
     public String getPlc() {
         return plc;
@@ -84,8 +80,4 @@ public class Betriebsstelle {
     public String getLetzteAenderung() {
         return letzteAenderung;
     }
-
-
-
-
 }
