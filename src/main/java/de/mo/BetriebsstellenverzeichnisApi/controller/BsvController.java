@@ -14,42 +14,38 @@ import java.io.IOException;
 @RestController
 public class BsvController {
 
-
-
     @RequestMapping("/betriebsstelle")
     public String betriebsstelle(){
 
-        return  " <div> " +
-                    " <h1> to get a valid JSON response, please add the RL-100 code after /betriebsstelle </h1> " +
-                    " <h2> example: betriebsstelle/XABC </h2> " +
-                " </div>";
+        String headline = "to get a valid JSON response, please add the RL-100 code after /betriebsstelle";
+        String h2 = "example: betriebsstelle/XABC";
 
+        return  " <div> " +
+                    " <h1> " + headline + " </h1> " +
+                    " <h2> " + h2 + " </h2> " +
+                " </div>";
     }
 
     @RequestMapping("/betriebsstelle/{RL100}")
-    public String returnBetriebsstelle(@PathVariable("RL100") String rl100Code) throws IOException {
+    public Betriebsstelle returnBetriebsstelle(@PathVariable("RL100") String rl100Code){
+
         CsvHandler csvHandler = new CsvHandler();
 
         // change pathToFile here if you want to load another file
         csvHandler.readCsv("src/main/resources/assets/BSV_2021_10.csv");
 
-        ObjectMapper mapper = new ObjectMapper();
-
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-
-        String BetriebsstelleAsJsonString = mapper.writeValueAsString(csvHandler.searchForBetriebsstelle(rl100Code));
-
-        return BetriebsstelleAsJsonString;
+        return csvHandler.searchForBetriebsstelle(rl100Code);
     }
 
     @RequestMapping("*")
     public String greeting(){
+
+        String headline = "Welcome to BetriebsstellenverzeichnisRestApi.";
+        String h2 = "For further documentation please contact your webmaster.";
+
         return  " <div> " +
-                    " <h1> Welcome to BetriebsstellenverzeichnisRestApi. </h1> " +
-                    " <h2> For further documentation please contact your webmaster. </h2> " +
+                " <h1> " + headline + " </h1> " +
+                " <h2> " + h2 + " </h2> " +
                 " </div>";
     }
-
-
-
 }
